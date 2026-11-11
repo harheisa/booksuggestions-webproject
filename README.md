@@ -18,7 +18,7 @@ BookSuggestions is a React-made app for searching for books online, for suggesti
 
 1. Clone the repository to your machine:
    ```bash
-   git clone https://github.com
+   git clone https://github.com/harheisa/booksuggestions-webproject.git
    ```
 2. Move to the project folder and install the dependencies:
    ```bash
