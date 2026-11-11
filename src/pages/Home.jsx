@@ -6,9 +6,9 @@ const GENRES = new Array(
   { id: 'science_fiction', label: 'Sci-fi' },
   { id: 'fantasy', label: 'Fantasy' },
   { id: 'mystery_and_detective_stories', label: 'Mystery & Detective Stories' },
-  { id: 'history', label: 'History' },
+  { id: 'world_history', label: 'History' },
   { id: 'classics', label: 'Classics' },
-  { id: 'biography', label: 'Biographies' },
+  { id: 'programming', label: 'Programming' },
   { id: 'romance', label: 'Romance' },
   { id: 'psychology', label: 'Psychology' }
 );
@@ -18,7 +18,6 @@ function Home() {
   const [books, setBooks] = useState(new Array());
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [surpriseMessage, setSurpriseMessage] = useState('');
   const [savedIds, setSavedIds] = useState(() => {
     const saved = localStorage.getItem('readingList');
     const parsed = saved ? JSON.parse(saved) : new Array();
@@ -53,16 +52,6 @@ function Home() {
     fetchBooksBySubject();
   }, [selectedGenre]);
 
-  // random genre (different than the current one)
-  const handleSurpriseMe = () => {
-    const otherGenres = GENRES.filter((g) => g.id !== selectedGenre.id);
-    const randomIndex = Math.floor(Math.random() * otherGenres.length);
-    const chosen = otherGenres.at(randomIndex);
-
-    setSelectedGenre(chosen);
-    setSurpriseMessage(`Try something from this genre: ${chosen.label}`);
-  };
-
   // Saves recommended book to reading list
   const addToReadingList = (book) => {
     const saved = localStorage.getItem('readingList');
@@ -95,10 +84,10 @@ function Home() {
       <div className="p-4 mb-4 rounded-3 border" style={{ backgroundColor: 'var(--bg-card)' }}>
         <h1 className="mb-2">Recommendations</h1>
         <p style={{ color: 'var(--text-muted)' }}>
-          Browse recommended books by genre, or let the machine make a random suggestion.
+          Browse recommended books by genre.
         </p>
 
-        {/* Genre-picker and Random Book button */}
+        {/* Genre-picker */}
         <div className="d-flex flex-wrap gap-2 mt-3 align-items-center">
           {GENRES.map((genre) => (
             <Button
@@ -108,29 +97,12 @@ function Home() {
               className={selectedGenre.id === genre.id ? 'btn-accent' : ''}
               onClick={() => {
                 setSelectedGenre(genre);
-                setSurpriseMessage('');
               }}
             >
               {genre.label}
             </Button>
           ))}
-
-          <Button
-            variant="dark"
-            size="sm"
-            onClick={handleSurpriseMe}
-            className="ms-md-auto d-flex align-items-center"
-          >
-            <FaDice className="me-2" />
-            Random Book
-          </Button>
         </div>
-
-        {surpriseMessage && (
-          <Alert variant="success" className="mt-3 mb-0 py-2">
-            {surpriseMessage}
-          </Alert>
-        )}
       </div>
 
       <h2 className="h4 mb-3">Genre: {selectedGenre.label}</h2>

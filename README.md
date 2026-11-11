@@ -1,16 +1,33 @@
-# React + Vite
+# BookSuggestions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BookSuggestions is a React-made app for searching for books online, for suggestions in different genres and for managing a user's own list of books to read or books a user has read previously. The app uses the Open Library API for finding book data and images of book covers, when available.
 
-Currently, two official plugins are available:
+## Features
+* **Recommendations:** Browse recommended books by genre.
+* **Search:** Search for books by name, by the genre they belong to or by author's name.
+* **My reading list:** Save books into browser memory (`localStorage`), mark them as read and give them ratings (1–5).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Used technologies
+* React & Vite
+* React Router (for routing the pages)
+* Bootstrap & React Bootstrap (responsive layout)
+* React Icons (UI Icons)
+* Open Library API (for searching book data and cover images)
 
-## React Compiler
+## Installation and start-up locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clone the repository to your machine:
+   ```bash
+   git clone https://github.com
+   ```
+2. Move to the project folder and install the dependencies:
+   ```bash
+   cd REPO-NAME
+   npm install
+   ```
+3. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+4. Open in browser the local address given by command console / terminal (commonly `http://localhost:5173`).
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
