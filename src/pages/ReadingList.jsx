@@ -67,7 +67,7 @@ function ReadingList() {
           {books.map((book) => {
             const coverUrl = book.coverId
               ? 'https://covers.openlibrary.org/b/id/' + book.coverId + '-M.jpg'
-              : 'https://placehold.co' + '/300x450?text=No+cover';
+              : 'https://placehold.co/300x450?text=No+cover+available';
 
             return (
               <Col key={book.key}>

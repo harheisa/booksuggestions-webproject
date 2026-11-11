@@ -105,7 +105,7 @@ function Search() {
           const isSaved = savedIds.includes(book.key);
           const coverUrl = book.cover_i
             ? "https://covers.openlibrary.org/b/id/" + book.cover_i + "-M.jpg"
-            : "https://placehold.co" + "/300x450?text=No+cover";
+            : "https://placehold.co/300x450?text=No+cover+available";
 
           return (
             <Col key={book.key}>
