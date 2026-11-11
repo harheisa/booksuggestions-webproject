@@ -31,3 +31,5 @@ BookSuggestions is a React-made app for searching for books online, for suggesti
    ```
 4. Open in browser the local address given by command console / terminal (commonly `http://localhost:5173`).
 
+## Demo
+* Available at https://harheisa.github.io/booksuggestions-webproject/
