@@ -4,7 +4,7 @@ import { FaBookOpen } from 'react-icons/fa';
 
 function NavigationBar() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar variant="dark" expand="lg" className="custom-navbar">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <FaBookOpen className="me-2" />
